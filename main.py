@@ -175,7 +175,7 @@ def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, onMessage))
     application.add_handler(CommandHandler("credits", credits_command))
 
-    # Run the bot until the user presses Ctrl-C
+    # Run the bot until t he user presses Ctrl-C
     application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 
