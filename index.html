@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Social Media Post Generator</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+
+    <!-- Header -->
+    <header class="w-full max-w-md mb-6 text-center">
+        <h1 class="text-2xl font-bold text-gray-800">Fake Post Generator</h1>
+        <p class="text-gray-600 text-sm">Create fake Telegram & iOS messages</p>
+    </header>
+
+    <!-- Preview Section -->
+    <div class="w-full max-w-md mb-6 bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="p-2 bg-gray-200 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">
+            Preview
+        </div>
+
+        <!-- Capture Area -->
+        <div id="capture-area" class="theme-tg-dark p-4 flex items-end space-x-2">
+            <!-- Avatar -->
+            <div class="flex-shrink-0">
+                <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-400">
+                    <img id="preview-avatar" src="https://via.placeholder.com/150" alt="Avatar" class="avatar-img w-full h-full">
+                </div>
+            </div>
+
+            <!-- Message Bubble -->
+            <div class="message-bubble flex-1 p-3 relative max-w-[85%]">
+                <div id="preview-name" class="user-name text-sm font-bold mb-1">User Name</div>
+
+                <!-- Content -->
+                <div class="flex flex-wrap items-end gap-2">
+                    <span id="preview-text" class="message-text text-base leading-snug break-words whitespace-pre-wrap">
+                        This is a fake message text.
+                    </span>
+                    <span id="preview-time" class="message-time text-xs ml-auto self-end whitespace-nowrap">
+                        12:00 PM
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-4">
+
+        <!-- Style Selector -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Style</label>
+            <select id="style-select" class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500">
+                <option value="theme-tg-dark">Telegram Dark</option>
+                <option value="theme-tg-light">Telegram Light</option>
+                <option value="theme-ios">iOS Message</option>
+            </select>
+        </div>
+
+        <!-- Name Input -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" id="input-name" class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" value="User Name">
+        </div>
+
+        <!-- Message Input -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea id="input-message" rows="3" class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500">This is a fake message text.</textarea>
+        </div>
+
+        <!-- Time Input -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Time</label>
+            <input type="text" id="input-time" class="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" value="12:00 PM">
+        </div>
+
+        <!-- Avatar Upload -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Avatar</label>
+            <input type="file" id="input-avatar" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+        </div>
+
+        <!-- Actions -->
+        <div class="pt-2">
+            <button id="btn-download" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center space-x-2 transition duration-200">
+                <i class="fas fa-download"></i>
+                <span>Download Image</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

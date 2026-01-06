@@ -1,0 +1,99 @@
+:root {
+  --tg-dark-bg: #1e1e1e;
+  --tg-dark-bubble: #2b5278;
+  --tg-dark-text: #ffffff;
+  --tg-dark-time: #6c7f93;
+
+  --tg-light-bg: #87a9c3; /* Default Telegram pattern bg color */
+  --tg-light-bubble: #ffffff;
+  --tg-light-text: #000000;
+  --tg-light-time: #a0a0a0;
+
+  --ios-bg: #ffffff;
+  --ios-bubble: #e9e9eb;
+  --ios-blue-bubble: #007aff;
+  --ios-text: #000000;
+  --ios-time: #8e8e93;
+}
+
+/* Base Transition */
+.preview-container {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Telegram Dark Theme */
+.theme-tg-dark {
+  background-color: #0e1621;
+  color: white;
+}
+.theme-tg-dark .message-bubble {
+  background-color: #182533;
+  border-radius: 12px 12px 12px 0;
+}
+.theme-tg-dark .message-text {
+  color: white;
+}
+.theme-tg-dark .message-time {
+  color: #6c7f93;
+}
+.theme-tg-dark .user-name {
+  color: #708499; /* Telegram default name color in dark mode often varies, stick to a muted blue */
+}
+
+/* Telegram Light Theme */
+.theme-tg-light {
+  background-color: #728795; /* Fallback */
+  background-image: url('https://web.telegram.org/img/bg_0.png'); /* Standard pattern */
+  background-size: cover;
+}
+.theme-tg-light .message-bubble {
+  background-color: #ffffff;
+  border-radius: 12px 12px 12px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.theme-tg-light .message-text {
+  color: black;
+}
+.theme-tg-light .message-time {
+  color: #a0a0a0;
+}
+.theme-tg-light .user-name {
+  color: #3390ec;
+}
+
+/* iOS Message Theme */
+.theme-ios {
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.theme-ios .message-bubble {
+  background-color: #e9e9eb;
+  border-radius: 18px;
+  color: black;
+  position: relative;
+}
+/* For iOS "sent" messages usually it's blue, but if this is "received", it's gray.
+   Assuming "fake post" implies mostly a received message style or a general post.
+   Let's stick to a generic received look for consistency with avatar on left. */
+
+.theme-ios .user-name {
+  color: #8e8e93;
+  font-size: 0.75rem;
+  margin-bottom: 2px;
+  display: block; /* iOS group chats show names */
+}
+
+/* Avatar styling */
+.avatar-img {
+  object-fit: cover;
+}
+
+/* Ensures high quality capture */
+#capture-area {
+  width: 100%;
+  max-width: 480px; /* Mobile width constraint */
+  min-height: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
