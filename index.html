@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Social Media Post Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <div class="container mx-auto max-w-sm p-4">
+
+        <!-- Preview Section -->
+        <div id="preview" class="p-4 rounded-lg mb-4 telegram-dark">
+            <div class="flex items-start">
+                <img id="preview-avatar" src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full mr-3">
+                <div class="flex-1">
+                    <div class="flex justify-between items-center">
+                        <h3 id="preview-name" class="font-bold">Your Name</h3>
+                        <span id="preview-time" class="text-xs text-gray-400">12:00 PM</span>
+                    </div>
+                    <p id="preview-message" class="text-white mt-1">This is a sample message.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-xl font-bold mb-4">Customize Your Post</h2>
+
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter name">
+            </div>
+
+            <div class="mb-4">
+                <label for="time" class="block text-sm font-medium mb-1">Time</label>
+                <input type="text" id="time" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., 12:00 PM">
+            </div>
+
+            <div class="mb-4">
+                <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                <textarea id="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your message"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="avatar" class="block text-sm font-medium mb-1">Avatar</label>
+                <input type="file" id="avatar" class="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+            </div>
+
+            <div class="mb-4">
+                <label for="style-select" class="block text-sm font-medium mb-1">Style</label>
+                <select id="style-select" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="telegram-dark">Telegram Dark</option>
+                    <option value="telegram-light">Telegram Light</option>
+                    <option value="ios-message">iOS Message</option>
+                </select>
+            </div>
+
+            <button id="download-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                <i class="fas fa-download mr-2"></i> Download Image
+            </button>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

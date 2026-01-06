@@ -1,0 +1,70 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.telegram-dark {
+    background-color: #1a222c;
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+.telegram-dark #preview-name {
+    color: #5ecafb;
+}
+
+.telegram-dark #preview-time {
+    color: #707b89;
+}
+
+.telegram-light {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.telegram-light #preview-name {
+    color: #2a9ef0;
+}
+
+.telegram-light #preview-time {
+    color: #a0a0a0;
+}
+
+.telegram-light #preview-message {
+    color: #000000;
+}
+
+
+.ios-message {
+    background-color: #f0f0f0;
+    color: #000000;
+    border-radius: 20px;
+    padding: 12px 16px;
+}
+
+.ios-message #preview-name {
+    display: none;
+}
+
+.ios-message #preview-time {
+    display: none;
+}
+
+.ios-message #preview-message {
+    color: #000000;
+    font-size: 1.1rem;
+    background-color: #dcdcdc;
+    padding: 8px 12px;
+    border-radius: 18px;
+    display: inline-block;
+}
+
+.ios-message #preview-avatar {
+    display: none;
+}
+
+.ios-message .flex.items-start {
+    align-items: flex-end;
+}
